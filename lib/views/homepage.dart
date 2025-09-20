@@ -12,6 +12,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color.fromARGB(255, 39, 39, 39),
+        child: const Icon(Icons.add, color: Colors.white70, size: 30),
+        
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 23, 23, 23),
         leadingWidth: 100.0,
@@ -43,7 +51,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: NotesList(),
+      body: Column(
+        children: [
+          SizedBox(height: 30),
+
+          Expanded(child: NotesList()),
+        ],
+      ),
     );
   }
 }
