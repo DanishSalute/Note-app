@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/edit_note.dart';
 
 class NotesList extends StatefulWidget {
   const NotesList({super.key});
@@ -25,25 +26,33 @@ class _NotesListState extends State<NotesList> {
     return ListView.builder(
       itemCount: notes.length,
       itemBuilder: (context, index) {
-        return Card(
-          color: const Color.fromARGB(255, 39, 39, 39),
-          child: Padding(
-            padding: EdgeInsetsGeometry.all(15),
-            child: ListTile(
-              title: Text(
-                notes[index].title,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EditNote()),
+            );
+          },
+          child: Card(
+            color: const Color.fromARGB(255, 39, 39, 39),
+            child: Padding(
+              padding: EdgeInsetsGeometry.all(15),
+              child: ListTile(
+                title: Text(
+                  notes[index].title,
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              subtitle: Text(
-                notes[index].date,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.white,
+                subtitle: Text(
+                  notes[index].date,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),

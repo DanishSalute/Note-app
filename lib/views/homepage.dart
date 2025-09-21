@@ -15,13 +15,13 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Color.fromARGB(255, 39, 39, 39),
+        shape: CircleBorder(),
         child: const Icon(Icons.add, color: Colors.white70, size: 30),
-        
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
 
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 23, 23, 23),
+        backgroundColor: Colors.transparent,
         leadingWidth: 100.0,
         leading: Center(
           child: Padding(
