@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/edit_note.dart';
 import 'package:flutter_app/views/notes_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,11 +10,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late List<Map<String, String>> displayNote;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Add new note
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => EditNote()),
+          );
+        },
         backgroundColor: Color.fromARGB(255, 39, 39, 39),
         shape: CircleBorder(),
         child: const Icon(Icons.add, color: Colors.white70, size: 30),
@@ -25,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         leadingWidth: 100.0,
         leading: Center(
           child: Padding(
-            padding: const EdgeInsets.only(left: 10.0),
+            padding: const EdgeInsets.only(left: 10),
             child: Text(
               "Notizen",
               style: TextStyle(

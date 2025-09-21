@@ -33,25 +33,28 @@ class _NotesListState extends State<NotesList> {
               MaterialPageRoute(builder: (context) => EditNote()),
             );
           },
-          child: Card(
-            color: const Color.fromARGB(255, 39, 39, 39),
-            child: Padding(
-              padding: EdgeInsetsGeometry.all(15),
-              child: ListTile(
-                title: Text(
-                  notes[index].title,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: Card(
+              color: const Color.fromARGB(255, 39, 39, 39),
+              child: Padding(
+                padding: EdgeInsetsGeometry.all(10),
+                child: ListTile(
+                  title: Text(
+                    notes[index].title,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                subtitle: Text(
-                  notes[index].date,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.white,
+                  subtitle: Text(
+                    notes[index].date,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
